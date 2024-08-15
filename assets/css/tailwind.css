@@ -147,7 +147,15 @@
   }
   
   code {
-    @apply bg-gray-100 dark:bg-gray-800 rounded-lg text-sm border dark:border-gray-700 px-2 py-1;
+    @apply bg-gray-100 dark:bg-gray-800 rounded-lg text-sm px-2 py-1;
+    color: #d63200;
+    background-color: #f8f8f8;
+  }
+
+  code:is(.dark *) {
+    @apply px-1; 
+    color: #ffcc66;
+    background-color: transparent;
   }
   
   pre {
@@ -156,6 +164,12 @@
   
   pre code {
     @apply bg-transparent border-0 px-0;
+    color: #f8f8f2;
+  }
+
+  pre code:is(.dark *) {
+    @apply px-0;
+    color: #f8f8f2;
   }
   
   figure {
@@ -370,3 +384,4 @@
     @apply text-2xl font-extrabold text-gray-900 dark:text-gray-300;
   }
 }
+
