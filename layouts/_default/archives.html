@@ -1,0 +1,26 @@
+{{ define "main" }} 
+
+<section class="pb-10 flex flex-col">
+   {{ range (.Site.RegularPages.GroupByDate "2006") }}
+       {{ if and (gt .Key 1) (gt (where .Pages "Type" "posts") 0) }}
+            <div class="py-2 flex flex-col gap-1">
+              <h3 class="title-small">{{ .Key }}</h3>
+            </div>
+            
+            <hr/>
+
+            <ul class="archive-list list-none ml-0">
+                {{ range (where .Pages "Type" "posts") }}
+                    {{ if (ne .Params.hidden true) }}
+                        <li>
+                            <span class="text-gray-500 mr-4">{{ .PublishDate.Format "2006-01-02" }}</span>
+                            <a class="font-medium" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </li>
+                    {{ end }} 
+                {{ end }}
+            </ul>
+        {{ end }}
+	{{ end }}
+</section>
+
+{{ end }}

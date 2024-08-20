@@ -103,7 +103,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 text-lg text-justify;
+    @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 text-base text-justify;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -248,7 +248,7 @@
   
   /* Content overrides */
   #content {
-    @apply leading-normal;
+    @apply leading-relaxed;
   }
 
   #content a {
@@ -272,7 +272,7 @@
   }
   
   #content .description {
-    @apply text-gray-600 dark:text-gray-300 text-base;
+    @apply text-gray-600 dark:text-gray-300 text-base leading-relaxed;
   }
   
   #content .read-more {
